@@ -15,14 +15,14 @@ function Blogs() {
       ) : (
         posts.map((post) => {
           return (
-            <div>
+            <div className="mt-4">
               <p className="font-bold text-xl">{post.title}</p>
-              <p>{`By ${post.author} on ${post.category}`}</p>
+              <p className="italic">By {post.author} <span className="not-italic"> on </span> <span className="underline font-bold not-italic">{post.category} </span></p>
               <p>{`Posted On ${post.date}`}</p>
-              <p>{post.content}</p>
+              <p className="mt-6 mb-3">{post.content}</p>
               <div>
                 {post.tags.map((tag) => {
-                  return <span className="tags">{`#${tag}`}</span>;
+                  return <span className="underline text-blue-500 font-bold ">{` #${tag}`}</span>;
                 })}
               </div>
             </div>
